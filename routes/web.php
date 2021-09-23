@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('Home');
 Route::get('/catalog', [CatalogController::class, 'index'])->name('Catalog_list');
+
