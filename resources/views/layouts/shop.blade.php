@@ -7,7 +7,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>Electro - HTML Ecommerce Template</title>
-
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
@@ -63,7 +64,7 @@
                 <!-- LOGO -->
                 <div class="col-md-3">
                     <div class="header-logo">
-                        <a href="#" class="logo">
+                        <a href="{{route('catalog')}}" class="logo">
                             <img src="{{asset('/img/logo.png')}}" alt="">
                         </a>
                     </div>
@@ -172,7 +173,7 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">Hot Deals</a></li>
                 <li><a href="#">Categories</a></li>
-                <li><a href="#">Laptops</a></li>
+                <li><a href="{{route('catalog_category', ['category' => 3])}}">Laptops</a></li>
                 <li><a href="#">Smartphones</a></li>
                 <li><a href="#">Cameras</a></li>
                 <li><a href="#">Accessories</a></li>
