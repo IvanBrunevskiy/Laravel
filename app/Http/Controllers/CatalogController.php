@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CatalogController extends Controller
 {
     public function index(){
-        return view('catalog.catalog');
+        //return view('catalog.catalog');
     }
 
     public function category(Request $request, Category $category){

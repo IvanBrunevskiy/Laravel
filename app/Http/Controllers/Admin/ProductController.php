@@ -89,4 +89,17 @@ class ProductController extends Controller
     {
       //
     }
+
+    public function random(){
+        $products = Product::all();
+        $rand10 = [];
+        for($i=0; $i<10; $i++){
+            $rand10[] = rand(1, count($products));
+        }
+        $products_rand = [];
+        foreach ($rand10 as $id){
+            $products_rand[] = Product::all()->where('id', '=', $id);
+        }
+        return view('catalog.list', compact('products_rand'));
+    }
 }
