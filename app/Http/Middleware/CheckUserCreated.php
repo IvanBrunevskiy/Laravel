@@ -25,7 +25,7 @@ class CheckUserCreated
         if ($user_created->format('d-m-Y') < $today->subDays(3)->format('d-m-Y')){
             abort(403);
         }
-        
+
         return $next($request);
     }
 }

@@ -166,7 +166,7 @@
 
             <!-- STORE -->
             <div id="store" class="col-md-9">
-                <h1>{{$category->name}}</h1>
+                <h1>{{$category->name ?? 'Каталог товаров'}}</h1>
                 <!-- store top filter -->
                 <div class="store-filter clearfix">
                     <div class="store-sort">
@@ -200,7 +200,7 @@
                     <div class="col-md-4 col-xs-6">
                         <div class="product">
                             <div class="product-img">
-                                <img src="{{asset('/img/product08.png')}}" alt="">
+                                <img src="{{$product->pagePhoto}}" alt="">
                             </div>
                             <div class="product-body">
                                 <p class="product-category">Category</p>
@@ -214,9 +214,13 @@
                                     <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
                                 </div>
                             </div>
+                            <form action="{{route('add_to_cart')}}" method="post">
+                                @csrf
                             <div class="add-to-cart">
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
                                 <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
                             </div>
+                            </form>
                         </div>
                     </div>
                     <!-- /product -->

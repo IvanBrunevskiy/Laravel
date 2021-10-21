@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
-    public function index(){
-        //return view('catalog.catalog');
+    public function index(Request $request){
+        $categories = Category::all();
+        $products = Product::query()->paginate(30);
+        return view('catalog.catalog', compact('categories', 'products'));
     }
 
     public function category(Request $request, Category $category){

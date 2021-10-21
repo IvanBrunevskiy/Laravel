@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -39,6 +40,15 @@ class ProductController extends Controller
     {
         $category = new Product();
         $category->fill($request->all());
+       // dd($request);
+        //dd($category->fill($request->all()));
+        if ($request->hasFile('photo')){
+            $file = $request->file('photo');
+            $photo = Storage::disk('public')->putFileAs('', $file, $file->getClientOriginalName());
+            $data['photo'] = $photo;
+            //dd($photo);
+        }
+//die();
         $category->save();
         return response()->redirectTo(route('admin.products.index'));
     }

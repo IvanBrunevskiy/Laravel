@@ -1,6 +1,7 @@
 @extends('layouts.shop')
 @section('content')
 <!-- SECTION -->
+@include('partials.flash.massage')
 <div class="section">
     <!-- container -->
     <div class="container">
