@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\MyMailController;
 use App\Http\Controllers\Api\SearchController;
 use App\Mail\OrderCompleted;
 use Illuminate\Http\Request;
@@ -16,8 +17,10 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get('mail', function (){
-  Mail::to('ivan@gmail.com')->send(new OrderCompleted('Hi everyone!!! Bratan'));
+Route::get('mail', MyMailController::class);
+
+Route::post('send-mail', function (){
+
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

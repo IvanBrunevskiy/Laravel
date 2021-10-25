@@ -90,4 +90,11 @@ return [
         'table' => 'failed_jobs',
     ],
 
+    'rateLimit' => [
+        'mail' => [
+            'allows' => 1,
+            'every' => 1
+        ]
+    ]
+
 ];

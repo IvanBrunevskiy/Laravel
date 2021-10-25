@@ -2,6 +2,7 @@
 @section('content')
 <!-- SECTION -->
 @include('partials.flash.massage')
+
 <div class="section">
     <!-- container -->
     <div class="container">
@@ -807,5 +808,7 @@
     </div>
     <!-- /container -->
 </div>
+
 <!-- /NEWSLETTER -->
 @endsection
+
